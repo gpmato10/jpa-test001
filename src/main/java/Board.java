@@ -8,7 +8,7 @@ import javax.persistence.*;
 )
 public class Board {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE,
+    @GeneratedValue(strategy = GenerationType.AUTO,
             generator = "BOARD_SEQ_GENERATOR")
     private long id;
 
