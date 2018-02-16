@@ -1,0 +1,25 @@
+drop table MEMBER if EXISTS;
+create table MEMBER(
+  MEMBER_ID VARCHAR (255) NOT NULL ,
+  TEAM_ID VARCHAR (255),
+  USERNAME VARCHAR (255),
+  PRIMARY KEY (MEMBER_ID)
+);
+
+drop table TEAM if EXISTS;
+CREATE TABLE TEAM(
+  TEAM_ID VARCHAR (255) NOT NULL,
+  NAME VARCHAR (255),
+  PRIMARY KEY (TEAM_ID)
+);
+
+ALTER TABLE MEMBER ADD CONSTRAINT  FK_MEMBER_TEAM
+  FOREIGN KEY (TEAM_ID) REFERENCES TEAM;
+
+INSERT INTO TEAM(TEAM_ID, NAME) values('team1', '팀1');
+INSERT INTO MEMBER(member_id, team_id, USERNAME) values('member1', 'team1', '회원1');
+INSERT INTO MEMBER(member_id, team_id, USERNAME) values('member2', 'team2', '회원2');
+
+select T.* from MEMBER M
+  JOIN TEAM T ON M.TEAM_ID = T.ID
+    WHERE M.MEMBER_ID='member1';
