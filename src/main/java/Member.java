@@ -13,8 +13,12 @@ public class Member {
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
-    public Member(String member1, String 회원1) {
+    public Member() {
+    }
 
+    public Member(String member1, String username) {
+        this.id = member1;
+        this.username = username;
     }
 
     public String getId() {

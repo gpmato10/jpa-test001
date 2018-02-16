@@ -11,11 +11,12 @@ public class Team {
 
     private String name;
 
-    public Team(String team1, String 팀1) {
-
+    public Team() {
     }
 
-    public Team() {
+    public Team(String member1, String name1) {
+        this.id = member1;
+        this.name = name1;
     }
 
     public String getId() {

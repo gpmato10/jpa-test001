@@ -27,7 +27,7 @@ public class Main {
 
     public static void testSave(EntityManager em) {
         //팀1 저장
-        Team team1 = new Team("team1", "팀1");
+        Team team1 = new Team("Team1", "팀1");
         em.persist(team1);
 
         //회원1 저장
