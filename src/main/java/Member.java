@@ -1,11 +1,21 @@
 import javax.persistence.*;
 
+@Entity
 public class Member {
+
+    @Id
+    @Column(name = "MEMBER_ID")
     private String id;
 
     private String username;
 
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
     private Team team;
+
+    public Member(String member1, String 회원1) {
+
+    }
 
     public String getId() {
         return id;
